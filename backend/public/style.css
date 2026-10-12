@@ -23,6 +23,11 @@
     --media: "Average Sans", sans-serif;
     --redonda: "Noto Sans JP", sans-serif;
 
+
+    --borda: var(--linha);
+    --raio: 8px;
+    --destaque: var(--bege);
+    --painel: rgba(11, 10, 8, .72);
     /* pesos */
     --peso-fino: 100;
     --peso-leve: 300;
@@ -124,62 +129,18 @@ body::before {
     height: 100vh;
   
 }
-.logo{
-    width: 100%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.logo h1{
-    font-size: 5em;
-    font-family: var(--redonda);
-    font-weight: lighter;
-    text-transform: uppercase;
-}
-
-.logo p{
-    font-family: var(--redonda);
-    
-    font-size: 2em;
-}
-#autenticidade{
-    font-size: 2.1em;
-
-    font-family: var(--redonda);
-    font-weight: lighter;
-}
 
 
 
-.header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    text-align: center;
-}
-.header h1{
-    font-family: var(--redonda);
-    font-weight: lighter;
-    font-size: 2.4em;
-}
-.header h2{
-    font-family: var(--fina);
-    font-size: 1.2em;
-    font-weight: normal;
-}
-.header p{
-    font-family: var(--redonda);
-    font-weight: lighter;
-}
+
+
 
 main{
     width: 100%;
-    max-width: 520px;
     padding: 20px;
+
 }
+
 
 .formulario{
     display: flex;
@@ -282,16 +243,22 @@ input[type="date"]{
 /* telas maiores */
 @media (min-width: 600px){
     body{
-        background-image: url(img/pc.jpg);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
         backdrop-filter: blur(2px) brightness(.45);
         font-family: var(--redonda);
         font-weight: lighter;
     
 
     }
+
+    
+
+    .seta-hero svg{
+    animation: pular 1.8s ease-in-out infinite;
+}
+.seta-hero svg{
+    width: 2rem;
+    height: 2rem;
+}
 
 .inicio{
         background: url(img/men.jpg) center / cover no-repeat;
@@ -370,41 +337,383 @@ input[type="date"]{
     text-transform: uppercase;
 }
     
-.bloco2{
-    width: 100%;
-    height: 100%;
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+
+
 }
-.introducaofoto{
-    width: 100%;
-    height: 80vh;
-    background: url(img/pag2.jpg) center / cover no-repeat;
+.seta-hero svg{
+    animation: pular 1.8s ease-in-out infinite;
 }
-.introducao1{
-    width: 100%;
-    height: 80vh;
-    backdrop-filter: blur(2px) brightness(.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-}
-.introducao1 h2{
-    font-size: 3em;
-    font-family: var(--media);
-}
-.introducao1 p{
-    font-size: 1.1em;
-    font-family: var(--fina);
-}
-#parte-introducao{
-    font-size: 2em;
-    margin-top: 10%;
-}
+.seta-hero svg{
+    width: 2rem;
+    height: 2rem;
 }
 
+/* =========================================================
+   BLOCO 2: do convite ao orçamento (mobile-first)
+   ========================================================= */
+
+.bloco2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     background-image: url(img/manForm.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    
+}
+
+/* ---------- introdução ---------- */
+.introducaofoto{
+    width: 100%;
+    background:
+        linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)),
+        url(img/men2.jpg) center / cover no-repeat;
+}
+
+.introducao1{
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: var(--e-5) var(--e-2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--e-2);
+    text-align: center;
+}
+
+
+.introducao1 h2{
+    width: 100%;
+    font-family: var(--media);
+    font-size: clamp(1.8rem, 7vw, 3rem);
+    font-weight: var(--peso-normal);
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+#orcamento{
+    background-color: var(--painel);
+    backdrop-filter: blur(2px);
+}
+
+.frase{
+    font-family: var(--fina);
+    font-size: var(--t-base);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--bege);
+}
+
+/* ---------- os três passos ---------- */
+.passos{
+    list-style: none;
+    width: 100%;
+    display: grid;
+    gap: var(--e-2);
+    margin-top: var(--e-3);
+    text-align: left;
+}
+
+.passos li{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: var(--e-2);
+    row-gap: .15rem;
+    padding: var(--e-2);
+    border: 1px solid var(--linha);
+    border-radius: var(--raio);
+    background: var(--painel);
+}
+
+.passos .num{
+    grid-row: span 2;
+    font-family: var(--fina);
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--bege);
+}
+
+.passos strong{
+    font-family: var(--media);
+    font-weight: var(--peso-normal);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.passos .desc{
+    font-size: var(--t-sm);
+    color: var(--bege-frio);
+}
+
+.aviso-estimativa{
+    max-width: 34rem;
+    font-size: var(--t-sm);
+    color: var(--bege-frio);
+}
+
+/* ---------- formulário ---------- */
+.bloco2 main{
+    width: calc(100% - 2rem);
+    max-width: 36rem;
+    margin: var(--e-4) auto var(--e-4);
+    padding: var(--e-3) var(--e-2);
+    
+    border: 1px solid var(--linha);
+    border-radius: var(--raio);
+    scroll-margin-top: var(--e-2);
+}
+
+
+
+.titulo-form{
+    font-family: var(--media);
+    font-size: 1.4rem;
+    font-weight: var(--peso-normal);
+    letter-spacing: .04em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.sub-form{
+    margin: .25rem 0 var(--e-3);
+    font-size: var(--t-sm);
+    text-align: center;
+    color: var(--bege-frio);
+}
+
+.dica{
+    display: block;
+    margin: -2px 0 8px;
+    font-size: .8rem;
+    line-height: 1.4;
+    color: var(--bege-frio);
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible{
+    outline: 2px solid var(--bege);
+    outline-offset: 2px;
+}
+
+/* ---------- dúvidas ---------- */
+.duvidas{
+    width: calc(100% - 2rem);
+    max-width: 36rem;
+    margin: 0 auto var(--e-5);
+    padding: var(--e-3) var(--e-2);
+    background: var(--painel);
+    border: 1px solid var(--linha);
+    border-radius: var(--raio);
+}
+
+.duvidas h2{
+    margin-bottom: var(--e-1);
+    font-family: var(--media);
+    font-size: 1.2rem;
+    font-weight: var(--peso-normal);
+    text-transform: uppercase;
+}
+
+.duvidas details{
+    padding: var(--e-2) 0;
+    border-bottom: 1px solid var(--linha);
+}
+
+.duvidas details:last-child{
+    border-bottom: none;
+}
+
+.duvidas summary{
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--fina);
+    font-weight: var(--peso-normal);
+}
+
+.duvidas summary::-webkit-details-marker{
+    display: none;
+}
+
+.duvidas summary::after{
+    content: "+";
+    float: right;
+    color: var(--bege);
+}
+
+.duvidas details[open] summary::after{
+    content: "\2212";
+}
+
+.duvidas summary:focus-visible{
+    outline: 2px solid var(--bege);
+    outline-offset: 4px;
+}
+
+.duvidas details p{
+    margin-top: var(--e-1);
+    font-size: var(--t-sm);
+    color: var(--bege-frio);
+}
+
+/* ---------- telas maiores ---------- */
+@media (min-width: 600px){
+    .introducao1{
+        padding: 7rem 2rem;
+    }
+
+    .passos{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .passos li{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .passos .num{
+        grid-row: auto;
+    }
+}
+
+.seta-hero{
+    display: block;
+    color: var(--bege);
+}
+
+
+/* ===== HERO INKBUDGET — MOBILE ===== */
+@media (max-width: 500px) {
+
+    .inicio {
+        width: 100%;
+        min-height: 100svh;
+        height: auto;
+        background: url("img/men.jpg") center / cover no-repeat;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .fundoimg {
+        width: 100%;
+        min-height: 100svh;
+        height: auto;
+        padding: 2rem 1.25rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        text-align: center;
+        background: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(2px) brightness(.7);
+        -webkit-backdrop-filter: blur(2px) brightness(.7);
+    }
+
+    /* Marca CC e nome do projeto */
+    .box1 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .75rem;
+        text-align: center;
+    }
+
+    .box1 h1 {
+        width: 100%;
+        height: auto;
+        margin: 0;
+
+        font-size: clamp(4rem, 20vw, 6rem);
+        font-weight: 100;
+        line-height: .9;
+        letter-spacing: -.06em;
+    }
+
+    #inkBudget {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: .05em;
+        text-transform: none;
+    }
+
+    /* Textos de apresentação */
+    .inicio > .fundoimg > p {
+        max-width: 300px;
+        margin: 1.5rem 0;
+
+        font-family: var(--fina);
+        font-size: .8rem;
+        font-weight: 400;
+        line-height: 1.7;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+    }
+
+    .textoInicio {
+        width: 100%;
+        height: auto;
+        min-height: 30vh;
+        margin: 1rem 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .textoInicio h2 {
+        max-width: 340px;
+        margin: 0 auto;
+
+        font-family: var(--media);
+        font-size: clamp(2rem, 8vw, 3rem);
+        font-weight: 400;
+        line-height: 1.2;
+        overflow-wrap: break-word;
+    }
+
+    .textoInicio p {
+        max-width: 300px;
+        margin-top: 1rem;
+
+        font-family: var(--fina);
+        font-size: .85rem;
+        line-height: 1.6;
+        letter-spacing: .08em;
+    }
+
+    /* Seta para continuar */
+    .seta-hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 44px;
+        height: 44px;
+        margin: 1rem 0 0;
+        color: var(--bege);
+        flex-shrink: 0;
+    }
+
+    .seta-hero svg {
+        width: 1.75rem;
+        height: 1.75rem;
+        animation: pular 1.8s ease-in-out infinite;
+    }
+
+}

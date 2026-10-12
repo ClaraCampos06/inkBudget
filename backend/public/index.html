@@ -19,41 +19,63 @@
             </div>
             <p>explore possibilidades</p>
             <div class="textoInicio">
-                <h2>encontre sua auenticidade</h2>
-                <p>a melhor experiência te espera aqui</p>
+                <h2>onde a possibilidade vira expressão</h2>
+                <p>ponte entre imaginação e concretização</p>
             </div>
             <p>descubra o próximo capítulo da sua expressão</p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-                        <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67"></path>
-                    </svg>
+           <a href="#orcamento" class="seta-hero" aria-label="Ir para o orçamento">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+        <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67"/>
+    </svg>
+</a>
         </div>
     </div>
   
 
 
-    <div class="bloco2">
-        <div class="introducaofoto">
+        <div class="bloco2">
+
+        <section class="introducaofoto" aria-labelledby="titulo-intro">
             <div class="introducao1">
+                <h2 id="titulo-intro">encontre sua autenticidade</h2>
+                <p class="frase">a melhor experiência te espera aqui</p>
 
-                <h2>sua idéia merece ganhar forma</h2>
-                <p>de uma lembrança a uma história que conte quem você é</p>
+                <ol class="passos">
+                    <li>
+                        <span class="num" aria-hidden="true">01</span>
+                        <strong>conte sua ideia</strong>
+                        <span class="desc">tamanho, estilo, cor, região do corpo e nível de detalhes.</span>
+                    </li>
+                    <li>
+                        <span class="num" aria-hidden="true">02</span>
+                        <strong>escolha dia e horário</strong>
+                        <span class="desc">e deixe seu nome e WhatsApp para o contato.</span>
+                    </li>
+                    <li>
+                        <span class="num" aria-hidden="true">03</span>
+                        <strong>receba a estimativa</strong>
+                        <span class="desc">o estúdio avalia e confirma seu horário pelo WhatsApp.</span>
+                    </li>
+                </ol>
 
-                <div id="parte-introducao">
-                    <p>toda arte nasce de sentimento</p>
-                    
-                </div>
-                <p>sua idéia começa aqui</p>
-
+                <p class="aviso-estimativa">o valor mostrado é uma estimativa. o valor final é passado pelo tatuador depois de avaliar a sua ideia.</p>
             </div>
+        </section>
 
-        </div>
-        <main>
+        <main id="orcamento" aria-labelledby="titulo-form">
+            <h2 class="titulo-form" id="titulo-form">faça seu orçamento</h2>
+            <p class="sub-form">leva poucos minutos.</p>
+
             <form id="formularioOrcamento" class="formulario">
+
                 <fieldset>
                     <legend>Tamanho</legend>
                     <label for="tamanho">Tamanho aproximado (cm)</label>
-                    <input type="number" name="tamanho" id="tamanho" placeholder="Ex: 50">
+                    <input type="number" name="tamanho" id="tamanho" placeholder="Ex: 15"
+                           min="1" max="100" step="any" inputmode="decimal" aria-describedby="dica-tamanho">
+                    <small class="dica" id="dica-tamanho">entre 1 e 100 cm. de referência: um celular em pé tem uns 15 cm, e uma moeda de R$ 1 tem menos de 3 cm. uma medida aproximada já ajuda.</small>
                 </fieldset>
+
                 <fieldset>
                     <legend>Estilo</legend>
                     <label for="estilo">Selecione o estilo da tatuagem</label>
@@ -63,6 +85,7 @@
                         <option value="oriental">Oriental</option>
                     </select>
                 </fieldset>
+
                 <fieldset>
                     <legend>Cores</legend>
                     <input type="radio" name="cores" id="cores1" value="preto e branco">
@@ -70,9 +93,10 @@
                     <input type="radio" name="cores" id="cores2" value="colorida">
                     <label for="cores2">Colorida</label>
                 </fieldset>
+
                 <fieldset>
                     <legend>Região do corpo</legend>
-                     <label for="regiaoCorpo">Região do corpo</label>
+                    <label for="regiaoCorpo">Região do corpo</label>
                     <select name="regiao" id="regiaoCorpo">
                         <option value="cabeca">Cabeça</option>
                         <option value="rosto">Rosto</option>
@@ -86,47 +110,74 @@
                         <option value="canela">Canela</option>
                         <option value="costas">Costas</option>
                         <option value="gluteos">Glúteos</option>
-        
                     </select>
                 </fieldset>
-                 <fieldset>
+
+                <fieldset>
                     <legend>Detalhes</legend>
                     <label for="detalhes">Quantidade de detalhes</label>
-                    <select name="detalhes" id="detalhes">
+                    <select name="detalhes" id="detalhes" aria-describedby="dica-detalhes">
                         <option value="pouco">Pouco</option>
                         <option value="medio">Médio</option>
                         <option value="muito">Muito</option>
                     </select>
+                    <small class="dica" id="dica-detalhes">pouco: traços e formas simples. médio: sombreados e alguns detalhes. muito: texturas e realismo.</small>
                 </fieldset>
+
                 <fieldset>
-        <legend>Data e horário</legend>
-        <label for="data">Dia</label>
-        <input type="date" name="data" id="data">
-        <label for="horario">Horário</label>
-        <select name="horario" id="horario" disabled></select>
-        <p id="avisoHorario"></p>
-        </fieldset>
-        
-        
-        <fieldset>
-        <legend>Seus dados</legend>
-        <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome" placeholder="Seu nome" maxlength="60" autocomplete="name">
-        <label for="telefone">WhatsApp</label>
-        <input type="tel" name="telefone" id="telefone" placeholder="(27) 99999-9999" maxlength="15" autocomplete="tel">
-        </fieldset>
-        
-        <button type="submit">Calcular orçamento</button>
-        
-        <div class="resultado" id="resultado">
-        <p id="textoResultado"></p>
-        <a id="linkWhatsapp" class="botao-whatsapp" href="#" target="_blank" rel="noopener" hidden>
-            Enviar para o estúdio no WhatsApp
-        </a>
-        </div>
+                    <legend>Data e horário</legend>
+                    <label for="data">Dia</label>
+                    <input type="date" name="data" id="data">
+                    <label for="horario">Horário</label>
+                    <select name="horario" id="horario" disabled aria-describedby="avisoHorario dica-horario"></select>
+                    <p id="avisoHorario"></p>
+                    <small class="dica" id="dica-horario">o horário fica reservado como pendente até o tatuador confirmar.</small>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Seus dados</legend>
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome" placeholder="Seu nome" maxlength="60" autocomplete="name">
+                    <label for="telefone">WhatsApp</label>
+                    <input type="tel" name="telefone" id="telefone" placeholder="(27) 99999-9999" maxlength="15" autocomplete="tel" aria-describedby="dica-dados">
+                    <small class="dica" id="dica-dados">usamos seu nome e WhatsApp só para o estúdio retornar o contato sobre este agendamento.</small>
+                </fieldset>
+
+                <button type="submit">Calcular e reservar horário</button>
+
+                <div class="resultado" id="resultado">
+                    <p id="textoResultado"></p>
+                    <a id="linkWhatsapp" class="botao-whatsapp" href="#" target="_blank" rel="noopener" hidden>
+                        Enviar para o estúdio no WhatsApp
+                    </a>
+                </div>
             </form>
-        
         </main>
+
+        <section class="duvidas" aria-labelledby="titulo-duvidas">
+            <h2 id="titulo-duvidas">dúvidas rápidas</h2>
+
+            <details>
+                <summary>a estimativa é o valor final?</summary>
+                <p>não. é uma faixa para você ter uma noção. o valor final é passado pelo tatuador depois de avaliar a sua ideia.</p>
+            </details>
+
+            <details>
+                <summary>o que acontece depois que eu enviar?</summary>
+                <p>seu horário fica reservado como pendente. o tatuador avalia o pedido e confirma com você pelo WhatsApp.</p>
+            </details>
+
+            <details>
+                <summary>preciso mudar o dia ou cancelar. e agora?</summary>
+                <p>é só chamar o estúdio pelo WhatsApp, usando o botão que aparece depois do cálculo.</p>
+            </details>
+
+            <details>
+                <summary>para que vocês usam meu nome e WhatsApp?</summary>
+                <p>só para o estúdio retornar o contato sobre este agendamento.</p>
+            </details>
+        </section>
+
     </div>
 
 
