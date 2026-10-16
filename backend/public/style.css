@@ -261,11 +261,13 @@ input[type="date"]{
 }
 
 .inicio{
-        background: url(img/men.jpg) center / cover no-repeat;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+         background:
+    linear-gradient(rgba(20, 34, 20, 0.884), rgba(249, 250, 249, 0.103)),
+    url(img/men.jpg) center top / cover no-repeat;
 }
 .fundoimg{
     width: 100%;
@@ -274,6 +276,7 @@ input[type="date"]{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    
 
     backdrop-filter: blur(2px) brightness(.5);
 }
