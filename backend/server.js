@@ -8,9 +8,19 @@ const path = require("path")
 const rateLimit = require("express-rate-limit")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
-
+const cors = require("cors")
+const tatuadores = require("./tatuadores")
 const app = express()
 
+const origensPermitidas = [
+    "https://claracampos06.github.io",   // inkTalk e inkBase no GitHub Pages
+    "http://127.0.0.1:5500",             // Live Server do VS Code
+    "http://localhost:5500"
+]
+
+app.get("/api/tatuadores", cors({ origin: origensPermitidas }), function (req, res) {
+    res.json(tatuadores)
+})
 // no Render existe um intermediário (proxy); sem isso todos pareceriam o mesmo IP
 app.set("trust proxy", 1)
 

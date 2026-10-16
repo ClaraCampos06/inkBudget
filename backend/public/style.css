@@ -720,3 +720,54 @@ button:focus-visible{
     }
 
 }
+
+/* =========================================================
+   Botão "Fale com o inkTalk"
+   Cole no FINAL do style.css do inkBudget e do inkBase.
+   Ajuste as duas cores abaixo para combinar com cada site.
+   ========================================================= */
+
+:root {
+    --inktalk-fundo: #111111;
+    --inktalk-texto: #ffffff;
+}
+
+.btn-inktalk {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1000;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 16px;
+    border-radius: 999px;
+
+    background: var(--inktalk-fundo);
+    color: var(--inktalk-texto);
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-inktalk:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* No celular, vira só o ícone para não cobrir o conteúdo */
+@media (max-width: 600px) {
+    .btn-inktalk span {
+        display: none;
+
+    }
+
+    .btn-inktalk {
+        padding: 14px;
+    }
+}
